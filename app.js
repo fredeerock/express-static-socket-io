@@ -3,9 +3,9 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var serveStatic = require('serve-static');
 
-server.listen(3000);
+server.listen(8080);
 
-app.use(serveStatic('../public'));
+app.use(serveStatic('./'));
 
 io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
